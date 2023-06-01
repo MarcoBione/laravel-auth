@@ -211,3 +211,8 @@ Route::resource('items', ItemController::class);
 php artisan make:model Nomemodel -rcms
 
 ```
+
+## Controllo le route
+```bash
+php artisan route:list --except-vendor
+```
