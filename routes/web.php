@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
+use Doctrine\DBAL\Schema\Index;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -24,6 +25,8 @@ Route::get('/', function () {
 Route::middleware(['auth','verified'])->name('admin.')->prefix('admin')->group(function(){
     Route::get('/',[DashboardController::class, 'index'])->name('dashboard');
 });
+Route::resource('admin', DashboardController::class);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
