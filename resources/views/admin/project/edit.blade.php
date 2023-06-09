@@ -27,10 +27,11 @@
 
             <div class="mb-3">
                 <label for="description">Descrizione</label>
-                <textarea name="description" id="description" rows="10" class="form-control" value="{{ $project->description }}"></textarea>
+                <textarea name="description" id="description" rows="10" class="form-control">{{ $project->description }}</textarea>
             </div>
 
             <button type="submit" class="btn btn-success">Condividi</button>
+            <a href="{{ route('admin.project.index') }}" class="btn btn-danger">Annulla e torna indietro</a>
 
         </form>
 

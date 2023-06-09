@@ -22,9 +22,9 @@
             @foreach ($projects as $project)
                 <tr>
                     <th scope="row">{{ $project->id }}</th>
-                    <td>{{ $project->title }}</td>
+                    <td>{{ $project->name }}</td>
                     <td><img class="img-thumbnail" style="width:100px" src="{{ $project->image }}"
-                            alt="{{ $project->title }}">
+                            alt="{{ $project->name }}">
                     </td>
                     <td>{{ $project->created_at }}</td>
                     <td>
@@ -33,7 +33,7 @@
                                 class="btn btn-primary text-white">Info</a>
                             <a href="{{ route('admin.project.edit', $project->id) }}"
                                 class="btn btn-warning text-white">Modifica</a>
-                            <form action="{{-- {{ route('admin.project.destroy', $project->id) }} --}}" method="POST">
+                            <form action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type='submit' class="delete-button btn btn-danger text-white"
