@@ -13,6 +13,7 @@
             <li class="nav-item">
 
                 <a class="nav-link" href="{{ route('admin.project.create') }}">Aggiungi nuovo progetto</a>
+
             </li>
 
         </ul>
