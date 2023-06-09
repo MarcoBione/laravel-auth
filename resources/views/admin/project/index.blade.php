@@ -28,17 +28,21 @@
                     </td>
                     <td>{{ $project->created_at }}</td>
                     <td>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+
                             <a href="{{ route('admin.project.show', $project->id) }} "
                                 class="btn btn-primary text-white">Info</a>
+
                             <a href="{{ route('admin.project.edit', $project->id) }}"
                                 class="btn btn-warning text-white">Modifica</a>
+
                             <form action="{{ route('admin.project.destroy', $project->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type='submit' class="delete-button btn btn-danger text-white"
-                                    data-item-title="{{ $project->title }}"> <i class="fa-solid fa-trash"></i></button>
+                                    data-item-title="{{ $project->title }}">Delete</button>
                             </form>
+
                         </div>
                     </td>
                 </tr>

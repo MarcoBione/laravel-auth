@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
 
-        <h1>Condividi un nuovo progetto</h1>
+        <h1>Modifica il tuo progetto</h1>
 
         <form action="{{ route('admin.project.update', $project->id) }}" method="POST">
             @csrf

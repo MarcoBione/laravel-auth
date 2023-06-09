@@ -28,6 +28,7 @@
             </div>
 
             <button type="submit" class="btn btn-success">Condividi</button>
+            <a href="{{ route('admin.project.index') }}" class="btn btn-danger">Annulla e torna indietro</a>
 
         </form>
 

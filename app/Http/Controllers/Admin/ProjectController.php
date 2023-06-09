@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Doctrine\DBAL\Schema\View;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
@@ -40,7 +41,7 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
         $newProject = new Project();
 
@@ -50,7 +51,7 @@ class ProjectController extends Controller
 
         $newProject->save();
 
-        return redirect()->route('admin.project.show', $newProject);
+        return redirect()->route('admin.project.show', $newProject->id);
     }
 
     /**
@@ -84,7 +85,7 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $data = $request->all();
+        $data = $request->validated();
 
         $project->update($data);
 
