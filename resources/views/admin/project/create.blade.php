@@ -6,11 +6,23 @@
 
         <h1>Condividi un nuovo progetto</h1>
 
+        <div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+
         <form action="{{ route('admin.project.store') }}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="title">Nome progetto</label>
-                <input type="text" class="form-control" name="title" id="title" required maxlength="150" minlength="3"
+                <label for="name">Nome progetto</label>
+                <input type="text" class="form-control" name="name" id="name" required maxlength="150" minlength="3"
                     placeholder="Max 150 - Min 3">
             </div>
 

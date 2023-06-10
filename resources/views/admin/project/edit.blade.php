@@ -11,8 +11,8 @@
             @method('PUT')
 
             <div class="mb-3">
-                <label for="title">Nome progetto</label>
-                <input type="text" class="form-control" name="title" id="title" required maxlength="150" minlength="3"
+                <label for="name">Nome progetto</label>
+                <input type="text" class="form-control" name="name" id="name" required maxlength="150" minlength="3"
                     placeholder="Max 150 - Min 3" value="{{ $project->name }}">
             </div>
 
