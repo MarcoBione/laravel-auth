@@ -44,13 +44,13 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
 
-        $newProject = new Project();
+        // $newProject = new Project();
 
-        $newProject->name = $data['name'];
-        $newProject->image = $data['image'];
-        $newProject->description = $data['description'];
+        // $newProject->name = $data['name'];
+        // $newProject->image = $data['image'];
+        // $newProject->description = $data['description'];
 
-        $newProject->save();
+        $newProject= Project::create($data);
 
         return redirect()->route('admin.project.show', $newProject->id);
     }
