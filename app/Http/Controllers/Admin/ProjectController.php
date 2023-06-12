@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Type;
 use Doctrine\DBAL\Schema\View;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
@@ -19,7 +20,6 @@ class ProjectController extends Controller
     {
         //in questa pagina visualizzerò tutti i miei progetti
         $projects = Project::all();
-
         return view('admin.project.index', compact('projects'));
     }
 
@@ -30,7 +30,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.project.create');
+        $types = Type::all();
+        return view('admin.project.create', compact('types'));
     }
 
     /**
@@ -62,7 +63,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.project.show', compact('project'));
+        $types = Type::all();
+        return view('admin.project.show', compact('project','types'));
     }
 
     /**
@@ -73,7 +75,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.project.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.project.edit', compact('project', 'types'));
     }
 
     /**

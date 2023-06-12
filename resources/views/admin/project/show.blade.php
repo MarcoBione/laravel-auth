@@ -7,10 +7,13 @@
         <div class="py-4">
             <a href="{{ route('admin.project.index') }}" class="btn btn-secondary">Torna indietro</a>
         </div>
+
+
         <div class="card">
             <img src="{{ $project->image }}" class="card-img-top" alt="{{ $project->name }}">
             <div class="card-body">
                 <h5 class="card-title">{{ $project->name }}</h5>
+                <p> {{ $project->type_id }}</p>
                 <p class="card-text">{{ $project->description }}</p>
             </div>
         </div>

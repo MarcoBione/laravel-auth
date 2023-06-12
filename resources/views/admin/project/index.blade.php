@@ -17,6 +17,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Image</th>
+                    <th scope="col">Tipo</th>
                     <th scope="col">Created</th>
                     <th scope="col">Actions</th>
                 </tr>
